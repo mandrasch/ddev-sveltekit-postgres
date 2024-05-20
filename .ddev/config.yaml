@@ -1,20 +1,19 @@
 name: ddev-sveltekit-postgres
 type: php
-docroot: ""
-php_version: "8.1"
+docroot: ''
+php_version: '8.1'
 webserver_type: nginx-fpm
 xdebug_enabled: false
-additional_hostnames: 
-    - "app.ddev-sveltekit-postgres"
+additional_hostnames:
+  - 'sveltekit-app.ddev-sveltekit-postgres'
 additional_fqdns: []
 database:
-    type: postgres
-    version: "16"
+  type: postgres
+  version: '16'
 use_dns_when_possible: true
-composer_version: "2"
+composer_version: '2'
 web_environment: []
 nodejs_version: 20.12.1
-
 # Key features of DDEV's config.yaml:
 
 # name: <projectname> # Name of the project, automatically provides

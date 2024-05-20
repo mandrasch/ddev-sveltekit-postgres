@@ -23,7 +23,7 @@ ddev npm run generate
 ddev npm run migrate
 ```
 
-These steps are only need to be done for the first time. Afterwards you can just use `ddev start` and `ddev npm run dev` to access your app https://app.ddev-sveltekit-postgres.ddev.site/ (see below).
+These steps are only need to be done for the first time. Afterwards you can just use `ddev start` and `ddev npm run dev` to access your app https://sveltekit-app.ddev-sveltekit-postgres.ddev.site/ (see below).
 
 ## Local Development
 
