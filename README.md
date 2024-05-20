@@ -90,7 +90,7 @@ Add additional hostname in .ddev/config.yaml:
 
 ```yaml
 additional_hostnames:
-  - 'app.ddev-sveltekit-postgres'
+  - 'sveltekit-app.ddev-sveltekit-postgres'
 ```
 
 Ran `ddev restart` to apply those changes.
@@ -98,12 +98,13 @@ Ran `ddev restart` to apply those changes.
 Add a new nginx conf `.ddev/nginx_full/sveltekit-app.conf`:
 
 ```
+# important, otherwise nginx fails with "[emerg] could not build server_names_hash,
+# you should increase server_names_hash_bucket_size: 64"
+server_names_hash_bucket_size 128;
+
 server {
 
-  # fails with nginx: [emerg] could not build server_names_hash, you should increase server_names_hash_bucket_size: 64
-  # server_name sveltekit-app.ddev-sveltekit-postgres.ddev.site;
-  # shortened it for now:
-  server_name app.ddev-sveltekit-postgres.ddev.site;
+  server_name sveltekit-app.ddev-sveltekit-postgres.ddev.site;
 
   location / {
     proxy_pass http://localhost:5173;
